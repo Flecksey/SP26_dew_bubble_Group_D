@@ -81,8 +81,8 @@ def _(fsolve, get_antoine_coefficient, np, plt, raoult_law_kvalue):
     P = 1.01325  # Pressure in bar
     Tguess = 350  # K
     propane = get_antoine_coefficient('propane', Tguess)
-    toluene = get_antoine_coefficient('toluene', Tguess)
-    antoineCoefs = np.array([propane[0:3], toluene[0:3]])
+    benzene = get_antoine_coefficient('benzene', Tguess) #changing the title to match toluene -> benzene
+    antoineCoefs = np.array([propane[0:3], benzene[0:3]])
     T_soln = []
     x_prop = np.linspace(0, 1)
     y_prop = []
