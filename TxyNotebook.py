@@ -1,3 +1,16 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "beautifulsoup4>=4.14.3",
+#     "marimo>=0.19.10",
+#     "matplotlib>=3.10.8",
+#     "numpy>=2.4.2",
+#     "pyzmq>=27.1.0",
+#     "requests>=2.32.5",
+#     "scipy>=1.17.1",
+# ]
+# ///
+
 import marimo
 
 __generated_with = "0.19.11"
@@ -101,7 +114,7 @@ def _(fsolve, get_antoine_coefficient, np, plt, raoult_law_kvalue):
     plt.plot(x_prop, T_soln, label='X_prop')
     plt.xlabel('$x_{prop}$, $y_{prop}$')
     plt.ylabel('Temperature (K)')
-    plt.title('T-x-y of propane and toluene')
+    plt.title('T-x-y of propane and toluene at 1.01325 bar')
     plt.legend(loc='upper right')
     return
 
