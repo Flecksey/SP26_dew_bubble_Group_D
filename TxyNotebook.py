@@ -97,7 +97,7 @@ def _(fsolve, get_antoine_coefficient, np, plt, raoult_law_kvalue):
     benzene = get_antoine_coefficient('benzene', Tguess) #changing the title to match toluene -> benzene
     antoineCoefs = np.array([propane[0:3], benzene[0:3]])
     T_soln = []
-    x_prop = np.linspace(0, 1)
+    x_prop = np.linspace(0, 1, 50) #make curve smoother
     y_prop = []
     for z_prop in x_prop:
         z = [z_prop, 1 - z_prop]
@@ -110,6 +110,8 @@ def _(fsolve, get_antoine_coefficient, np, plt, raoult_law_kvalue):
         K = raoult_law_kvalue(T, P, antoineCoefs)
         y = K * z
         y_prop.append(y[0])
+
+
     plt.plot(y_prop, T_soln, label='Y_prop')
     plt.plot(x_prop, T_soln, label='X_prop')
     plt.xlabel('$x_{prop}$, $y_{prop}$')
